@@ -1,0 +1,618 @@
+/* 공통 영역 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    padding-top: 60px;
+    /* 헤더 높이에 따라 조정해야 할 수 있습니다. */
+}
+
+header a,
+#information_link {
+    color: gray;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+header a:active,
+#information_link:active {
+    color: gray;
+}
+
+header a:hover,
+#information_link:hover {
+    color: black;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+.center {
+    text-align: center;
+}
+
+/* 헤더 영역 */
+header {
+    padding: 10px 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+}
+
+header ul {
+    align-items: center;
+    display: flex;
+    list-style-type: none;
+}
+
+header li {
+    padding: 5px 10px;
+}
+
+/* 푸터 영역 */
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: #ccc;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+footer img {
+    margin: 0 50px;
+    filter: grayscale();
+}
+
+/* 메인페이지 -> 컨테이너 */
+#container {
+    width: 1320px;
+    margin: 0 auto;
+}
+
+/* 메인페이지 -> 슬라이드 */
+ul,
+li {
+    list-style: none;
+}
+
+[name="slide"] {
+    display: none;
+}
+
+.slidebox {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.slidebox img {
+    max-width: 100%;
+}
+
+.slidebox .slidelist {
+    white-space: nowrap;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.slidebox .slideitem {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    transition: all 0.35s;
+}
+
+.slidebox .slideitem {
+    animation: slideAnimation 8s infinite linear;
+}
+
+@keyframes slideAnimation {
+
+    0%,
+    20%,
+    100% {
+        transform: translateX(0%);
+    }
+
+    25%,
+    45% {
+        transform: translateX(-100%);
+    }
+
+    50%,
+    70% {
+        transform: translateX(-200%);
+    }
+
+    75%,
+    95% {
+        transform: translateX(-300%);
+    }
+}
+
+/* 메인페이지 -> information 영역 */
+.information_left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.information_left p {
+    text-align: center;
+    font-size: 18px;
+    padding: 5px 20px;
+}
+
+.information_left img {
+    border-radius: 30px;
+    border: 2px solid black;
+}
+
+/* 메인페이지 -> game schedule 영역 */
+#game_schedule_table {
+    margin-top: 100px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#game_schedule_table tr,
+#game_schedule_table td,
+#game_schedule_table th {
+    border: 1px solid lightgray;
+    font-size: 24px;
+    padding: 20px;
+    text-align: center;
+}
+
+.today {
+    background-color: lightyellow;
+}
+
+.have_game a {
+    font-weight: bold;
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.have_game a:active {
+    color: blue;
+}
+
+/* 메인페이지 -> game schedule 영역 -> 모달 영역 */
+#modal {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    visibility: hidden;
+}
+
+#modal_close {
+    font-size: 20px;
+    border: 1px solid #007bff;
+    border-radius: 0.25rem;
+    background-color: #007bff;
+    color: white;
+    margin-top: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#modal_container {
+    padding: 30px 10px;
+    background-color: white;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 120px;
+    border-radius: 20px;
+}
+
+#modal_body {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+#modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 메인페이지 -> 금일 게임 현황 */
+#today_game_status {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#tgs_left img,
+#tgs_right img {
+    width: 120px;
+}
+
+#today_game_status .wrap {
+    display: flex;
+    justify-content: space-around;
+}
+
+#tgs_left,
+#tgs_right,
+#tgs_center {
+    align-items: center;
+    font-size: 60px;
+}
+
+#tgs_left {
+    color: red;
+}
+
+#tgs_center {
+    margin-top: 60px;
+}
+
+#tgs_left:hover {
+    font-size: 72px;
+    font-weight: bold;
+}
+
+#tgs_left:hover~#tgs_right {
+    color: gray;
+}
+
+#tgs_right:hover {
+    font-size: 72px;
+    font-weight: bold;
+}
+
+/* 랭킹 영역 */
+#ranking {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+#ranking #ranking_menu {
+    display: flex;
+    justify-content: center;
+}
+
+#ranking #ranking_menu div {
+    padding: 0 20px;
+    font-size: 24px;
+}
+
+#ranking>div ul {
+    visibility: hidden;
+}
+
+#ranking div p:hover+ul,
+#ranking div ul:hover {
+    visibility: visible;
+}
+
+#league_details {
+    font-size: 24px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#league_details div {
+    display: none;
+}
+
+#league_details div:target {
+    display: block;
+}
+
+#ranking div ul li a,
+#ranking div ul li a:active,
+#league_top a,
+#league_top a:active {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+#league_top {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#league_top div {
+    border: 1px solid gray;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#league_top div p {
+    font-size: 24px;
+
+}
+
+#league_top div ul {
+    font-size: 18px;
+    display: none;
+}
+
+#league_top div:target ul {
+    display: block;
+    animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* gallery 영역 */
+#gallery {
+    margin-top: 100px;
+    text-align: center;
+}
+
+#gallery>div {
+    display: none;
+}
+
+#gallery>div:first-of-type {
+    display: flex;
+}
+
+#gallery>div:target {
+    display: flex;
+}
+
+#gallery:has(:target:not(:is(#gallery1)))>#gallery1 {
+    display: none;
+}
+
+#gallery div div {
+    margin: 0 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#gallery div div p {
+    visibility: hidden;
+}
+
+#gallery div div:hover p {
+    visibility: visible;
+}
+
+#gallery div div:nth-of-type(1) {
+    width: 290px;
+    height: 200px;
+}
+
+#gallery div div:nth-of-type(2) {
+    width: 600px;
+    height: 350px;
+}
+
+#gallery div div:nth-of-type(3) {
+    width: 290px;
+    height: 200px;
+}
+
+.imgWhite {
+    background-color: white;
+}
+
+.img1 {
+    background-image: url("./선수제공파일/images/01.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img2 {
+    background-image: url("./선수제공파일/images/02.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img3 {
+    background-image: url("./선수제공파일/images/03.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img4 {
+    background-image: url("./선수제공파일/images/04.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img5 {
+    background-image: url("./선수제공파일/images/05.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img6 {
+    background-image: url("./선수제공파일/images/06.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* goods 영역 */
+#container #goods {
+    margin-top: 60px;
+    text-align: center;
+    height: 300px;
+}
+
+#container #goods #images {
+    display: flex;
+    justify-content: center;
+}
+
+#container #goods #images .image img {
+    width: 100px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+}
+
+#container #goods #images .image img:hover {
+    width: 200px;
+}
+
+/* information 페이지 */
+#sub01_container {
+    width: 1320px;
+    margin: 0 auto;
+}
+
+/* 소개 영역 */
+#sub01_container #introduce {
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./선수제공파일/images/05.jpg");
+    color: white;
+    padding: 100px 0;
+}
+
+#sub01_container #information {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+    border: 3px solid lightgray;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#sub01_container .title {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+#sub01_container #rules {
+    margin: 50px 0;
+    padding: 20px;
+    border: 3px solid lightgray;
+    border-radius: 20px;
+}
+
+#sub01_container #rules .title {
+    color: darkred;
+}
+
+#sub01_container #rules p {
+    font-size: 18px;
+}
+
+#sub01_container #howtocome {
+    text-align: center;
+    margin: 50px 0;
+    padding: 20px;
+    border: 3px solid lightgray;
+    border-radius: 20px;
+}
+
+/* sub2 페이지 */
+/* 차트 영역 */
+.bar-container {
+    display: flex;
+    align-items: flex-end;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.bar {
+    width: 30px;
+    margin-right: 10px;
+    background-color: #007bff;
+    text-align: center;
+    color: white;
+}
+
+.bar-label {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    white-space: nowrap;
+}
+
+/* Goods 영역 */
+#goods {
+    width: 1320px;
+    margin: 0 auto;
+    margin-top: 300px;
+    text-align: center;
+}
+
+#goods select {
+    width: auto;
+}
+
+#viewOptions label {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+#bestGoodsList,
+#goodsList {
+    justify-content: center;
+    display: flex;
+}
+
+#bestGoodsList div,
+#goodsList div {
+    padding: 5px 10px;
+}
+
+#bestGoodsList div img,
+#goodsList div img {
+    border-radius: 15px;
+}
+
+/* 모달 영역 */
+.edit-area {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #ccc;
+    position: relative;
+    background-color: #f0f0f0;
+}
+
+.edit-tools {
+    margin-top: 10px;
+}

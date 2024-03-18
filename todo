@@ -1,0 +1,26 @@
+[ A Module Todo ]
+.gallery에 display: none;
+.first-view에 display: flex;
+
+:target이 있으면 target -> display: flex;
+!:target -> display: none;
+
+
+[ B Module Todo ]
+Javascript 내부 API로 이미지 다운로드 (특정 영역을 blob으로 다운로드(이미지화))
+아니면 canvas로 다운로드 (수정된 이미지를 canvas 안에 넣고 다운로드 메서드 호출)
+capture한 variable을 download method에 주입하면 파일이 다운로드 될 것으로 예상
+
+key 17 == LCtrl
+key 39 == right arrow
+
+[ 0315 Todo ]
+프론트 출력 용을 하나 만들어놓고, 백그라운드에서 canvas에 내용을 그려내는 코드를 작성하여 canvas로 이미지화 하는 방식을 생각해봐야 할 듯.
+
+
+[ C Module Todo ]
+데이터 추출(데이터베이스 설계)가 중요함
+
+[ 추후 특강 ]
+금요일 예정
+만들기 어려운 거 있으면 리스트업 해놓고 공유하기
