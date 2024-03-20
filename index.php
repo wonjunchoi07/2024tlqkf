@@ -26,6 +26,9 @@ switch ($resource[1]) {
     case 'login':
         $pages = "./pages/login.php";
         break;
+    case 'join':
+        $pages = "./pages/join.php";
+        break;
     default:
         echo "잘못된 접근입니다.";
         exit();
