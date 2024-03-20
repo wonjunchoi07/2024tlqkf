@@ -45,7 +45,7 @@
     }
 
     #login-form button {
-        background-color: #4caf50;
+        background-color: #2b70ff;
         color: #fff;
         border: none;
         border-radius: 4px;
@@ -55,7 +55,7 @@
     }
 
     #login-form button:hover {
-        background-color: #45a049;
+        background-color: #2b70ff;
     }
 </style>
 </head>
