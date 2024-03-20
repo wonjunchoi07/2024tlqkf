@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = '';
+$dbname = 'skillsbaseballpark';
 $username = 'root';
 $password = '';
 
