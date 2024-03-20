@@ -23,6 +23,9 @@ switch ($resource[1]) {
     case 'goods':
         $pages = "./pages/sub04.php";
         break;
+    case 'login':
+        $pages = "./pages/login.php";
+        break;
     default:
         echo "잘못된 접근입니다.";
         exit();

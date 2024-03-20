@@ -20,7 +20,7 @@
         <li><a href="./pages/sub04.php">goods</a></li>
       </ul>
       <ul>
-        <li><a href="#">로그인</a></li>
+        <li><a href="./pages/login.php">로그인</a></li>
         <li><a href="#">회원가입</a></li>
       </ul>
     </header>
