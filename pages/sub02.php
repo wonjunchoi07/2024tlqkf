@@ -93,10 +93,10 @@
             <div id="edit-area" class="edit-area"></div>
             <!-- 편집 도구 -->
             <div class="edit-tools">
-              <button id="reset-button" class="btn btn-secondary">원래대로</button>
+              <button id="reset-button" class="btn btn-secondary" onclick="resetModal();">원래대로</button>
               <button id="add-image-button" class="btn btn-primary">사진 추가</button>
               <input type="file" id="image-input" hidden />
-              <button id="delete-button" class="btn btn-danger">삭제</button>
+              <button id="delete-button" class="btn btn-danger" onclick="removeAllBackimg();">삭제</button>
               <button id="download-button" class="btn btn-success">다운로드</button>
               <button id="text-box-button" class="btn btn-info">글상자</button>
               <button id="move-rotate-text-box-button" class="btn btn-warning">글상자 이동/회전</button>

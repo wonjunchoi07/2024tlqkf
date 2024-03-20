@@ -12,12 +12,12 @@
     <header>
       <ul>
         <li>
-          <a href="/"><img src="./logo.png" alt="로고" width="150px" /></a>
+          <a href="./mainpage.php"><img src="./logo.png" alt="로고" width="150px" /></a>
         </li>
-        <li><a href="./sub01.html">information</a></li>
-        <li><a href="./sub02.html">statistics</a></li>
-        <li><a href="./sub03.html">reservation</a></li>
-        <li><a href="./sub04.html">goods</a></li>
+        <li><a href="./pages/sub01.php">information</a></li>
+        <li><a href="./pages/sub02.php">statistics</a></li>
+        <li><a href="./pages/sub03.php">reservation</a></li>
+        <li><a href="./pages/sub04.php">goods</a></li>
       </ul>
       <ul>
         <li><a href="#">로그인</a></li>
