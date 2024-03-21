@@ -1,5 +1,5 @@
 <?php
-include("./api/dbconnect.php");
+include("./api/db_include.php");
 
 $request = $_SERVER['REQUEST_URI'];
 $path = explode("?", $request);
@@ -26,8 +26,8 @@ switch ($resource[1]) {
     case 'login':
         $pages = "./pages/login.php";
         break;
-    case 'join':
-        $pages = "./pages/join.php";
+    case 'signup':
+        $pages = "./pages/signup.php";
         break;
     default:
         echo "잘못된 접근입니다.";

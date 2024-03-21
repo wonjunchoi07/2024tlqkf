@@ -14,14 +14,14 @@
         <li>
           <a href="./mainpage.php"><img src="./logo.png" alt="로고" width="150px" /></a>
         </li>
-        <li><a href="./pages/sub01.php">information</a></li>
-        <li><a href="./pages/sub02.php">statistics</a></li>
-        <li><a href="./pages/sub03.php">reservation</a></li>
-        <li><a href="./pages/sub04.php">goods</a></li>
+        <li><a href="./information">information</a></li>
+        <li><a href="./statistics">statistics</a></li>
+        <li><a href="./reservation">reservation</a></li>
+        <li><a href="./goods">goods</a></li>
       </ul>
       <ul>
-        <li><a href="./pages/login.php">로그인</a></li>
-        <li><a href="#">회원가입</a></li>
+        <li><a href="./login">로그인</a></li>
+        <li><a href="./signup">회원가입</a></li>
       </ul>
     </header>
     <!-- 헤더 끝 -->
