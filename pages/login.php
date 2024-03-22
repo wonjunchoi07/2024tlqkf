@@ -1,5 +1,26 @@
 <?php
-    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $user_id = $_POST["user_id"];
+        $password = $_POST["password"];
+
+        // SQL 쿼리를 수정합니다.
+        $sql = "SELECT user_id, password FROM user WHERE user_id = :user_id AND password = :password";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(":user_id", $user_id);
+        $stmt->bindParam(":password", $password);
+
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user && ($user_id == $_POST['user_id'] && $password == $user['password'])) {
+           $_SESSION["user_id"] = $user["user_id"];
+           $_SESSION["password"] = $user["password"];
+           header("Location:/");
+           exit;
+        } else {
+            echo "회원구분, 아이디 또는 비밀번호를 확인해주세요.";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,18 +84,18 @@
 
 <div id="login-form">
     <h2>Login</h2>
-    <form action="#" method="post">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" required><br>
+    <form action="" method="post">
+        <label for="user_id">Username:</label><br>
+        <input type="text" id="user_id" name="user_id" required><br>
         <label for="password">Password:</label><br>
         <input type="password" id="password" name="password" required><br><br>
         <label>User Type:</label><br>
-        <input type="radio" id="admin" name="userType" value="admin">
-        <label for="admin">관리자</label><br>
-        <input type="radio" id="staff" name="userType" value="staff">
-        <label for="staff">담당자</label><br>
-        <input type="radio" id="member" name="userType" value="member" checked>
-        <label for="member">일반회원</label><br><br>
+        <input type="radio" id="userclass" name="userType" value="userclass">
+        <label for="userclass">관리자</label><br>
+        <input type="radio" id="userclass" name="userType" value="userclass">
+        <label for="userclass">담당자</label><br>
+        <input type="radio" id="userclass" name="userType" value="userclass" checked>
+        <label for="userclass">일반회원</label><br><br>
         <button type="submit">Login</button>
     </form>
 </div>

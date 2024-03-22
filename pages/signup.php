@@ -3,17 +3,31 @@
         $user_id = $_POST['user_id'];
         $name = $_POST['name'];
         $password = $_POST['password'];
-      
+        $captcha = $_POST['capcher'];
+
         try {
-            $sql = "INSERT INTO user(user_id,name,password) VALUES (?, ?, ?)";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute([$user_id,$name,$password]);
-            echo "회원가입이 성공적으로 완료되었습니다.";
+            $stmt = $pdo->prepare("SELECT * FROM user WHERE user_id = ?");
+            $stmt->execute([$user_id]);
+            if ($stmt->rowCount() > 0) {
+                echo "<script>alert('사용중인 ID 입니다.')</script>";
+            } else {
+                echo "<script>alert('사용 가능한 아이디입니다.')</script>";
+
+                if ($captcha != "1sdf78") {
+                    echo "<script>alert('캡차 번호가 틀렸습니다. 확인해주세요.')</script>";
+                } else {
+                    $sql = "INSERT INTO user(user_id, name, password) VALUES (?, ?, ?)";
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute([$user_id, $name, $password]);
+                    echo "<script>alert('관리자 승인 대기 중입니다.')</script>";
+                }
+            }
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
-      }
+    }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +90,7 @@
         background-color: #2b70ff;
     }
     
-    .capcher{
+    .capcha{
         width:250px;
         height:80px;
     }
@@ -88,18 +102,18 @@
     <h2>회원가입</h2>
     <form method="post">
         <label for="user_id">아이디:</label>
-        <input type="text" id="user_id" name="user_id" required><br>
+        <input type="text" id="user_id" name="user_id" value="user_id" ><br>
         <label for="idCheck">아이디 중복확인:</label>
-        <button onclick="alert('사용가능한 아이디 입니다.')">아이디 중복 확인</button>
+        <button>아이디 중복 확인</button>
         <br>
         <br>
         <label for="password">비밀번호:</label>
-        <input type="password" id="password" name="password" required><br>
+        <input type="password" id="password" name="password" ><br>
         <label for="name">이름:</label>
-        <input type="text" id="name" name="name" required><br>
-        <img class="capcher" src="./capcher.jpg" alt="">
-        <label for="captcha">캡차:</label>
-        <input type="text" id="captcha" name="captcha" required><br>
+        <input type="text" id="name" name="name" ><br>
+        <img class="capcha" src="./capcher.jpg" alt="">
+        <label for="capcher">캡차:</label>
+        <input type="text" id="capcher" name="capcher"><br>
         <button type="submit">가입하기</button>
     </form>
 </div>
