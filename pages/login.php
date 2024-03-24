@@ -1,5 +1,6 @@
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        session_start();
         $user_id = $_POST["user_id"];
         $password = $_POST["password"];
 
@@ -20,6 +21,7 @@
         } else {
             echo "회원구분, 아이디 또는 비밀번호를 확인해주세요.";
         }
+
     }
 ?>
 <!DOCTYPE html>

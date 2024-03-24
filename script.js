@@ -328,6 +328,42 @@ function removeAllBackimg() {
 }
 
 
+function hideModal() {
+  modal = document.getElementById('reservationModal');
+  modal.style.display = 'none';
+}
+
+function cllickHideModal(elem) {
+  modal = document.getElementById('reservationModal');
+  modal.style.display = 'none';
+}
+
+function showModal(elem) {
+  const modal = document.getElementById('reservationModal');
+  modal.style.display = 'block';
+}
+
+function night_leg(){
+    document.innerText(
+      `<label for='time'>time</lable>
+        <option value="night_time1">19시</option>
+        <option value="night_time2">23시</option>
+    `)
+}
+function moning_leg(){
+  document.innerText(
+    `<label for='time'>time</lable>
+      <option value="moning_time1">19시</option>
+      <option value="moning_time2">23시</option>
+  `)
+}
+function red_leg(){
+  document.innerText(
+    `<label for='time'>time</lable>
+      <option value="red_time1">19시</option>
+      <option value="red_time2">23시</option>
+  `)
+}
 //다운로드(보류)
 // 다운로드를 트리거하고 싶은 곳에 click 이벤트 핸들러로 등록해준다. 
 //function handleFileDownload() {

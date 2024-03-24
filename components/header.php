@@ -1,3 +1,6 @@
+<?php
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -21,5 +24,7 @@
         <li><a href="./signup">회원가입</a></li>
       </ul>
     </header>
+    <br>
+    br
 </body>
 </html>
