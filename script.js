@@ -295,3 +295,89 @@ function goodsEdit(elem) {
   $("#exampleModal").modal("show");
   adjustModalForContent(); // 모달 열릴 때 모달 크기 조정
 }
+
+// 모든 텍스트 상자 삭제 함수
+function removeAllTextBoxes() {
+  $(".text-box").remove();
+}
+
+
+function resetModal() {
+  removeAllTextBoxes(); // 모든 텍스트 상자 삭제
+  // 배경 이미지 초기화
+  $("#edit-area").css({
+    "background-image": "",
+    "background-size": "",
+    "background-repeat": "",
+    "background-position": "",
+    width: "",
+    height: "",
+  });
+}
+
+//배경 이미지 삭제
+function removeAllBackimg() {
+  $("#edit-area").css({
+    "background-image": "",
+    "background-size": "",
+    "background-repeat": "",
+    "background-position": "",
+    width: "",
+    height: "",
+  });
+}
+
+
+function hideModal() {
+  modal = document.getElementById('reservationModal');
+  modal.style.display = 'none';
+}
+
+function cllickHideModal(elem) {
+  modal = document.getElementById('reservationModal');
+  modal.style.display = 'none';
+}
+
+function showModal(elem) {
+  const modal = document.getElementById('reservationModal');
+  modal.style.display = 'block';
+}
+
+function night_leg(){
+    document.innerText(
+      `<label for='time'>time</lable>
+        <option value="night_time1">19시</option>
+        <option value="night_time2">23시</option>
+    `)
+}
+function moning_leg(){
+  document.innerText(
+    `<label for='time'>time</lable>
+      <option value="moning_time1">19시</option>
+      <option value="moning_time2">23시</option>
+  `)
+}
+function red_leg(){
+  document.innerText(
+    `<label for='time'>time</lable>
+      <option value="red_time1">19시</option>
+      <option value="red_time2">23시</option>
+  `)
+}
+//다운로드(보류)
+// 다운로드를 트리거하고 싶은 곳에 click 이벤트 핸들러로 등록해준다. 
+//function handleFileDownload() {
+  //const response = await fetch('api address');
+  //const file = await response.blob(); 
+  //const downloadUrl = window.URL.createObjectURL(file); // 해당 file을 가리키는 url 생성
+ 
+  //const anchorElement = document.createElement('a');
+  //document.body.appendChild(anchorElement);
+  //anchorElement.download = 'some file'; // a tag에 download 속성을 줘서 클릭할 때 다운로드가 일어날 수 있도록 하기
+  //anchorElement.href = downloadUrl; // href에 url 달아주기
+ 
+ // anchorElement.click(); // 코드 상으로 클릭을 해줘서 다운로드를 트리거
+ 
+ // document.body.removeChild(anchorElement); // cleanup - 쓰임을 다한 a 태그 삭제
+  //window.URL.revokeObjectUrl(downloadUrl); // cleanup - 쓰임을 다한 url 객체 삭제
+//}

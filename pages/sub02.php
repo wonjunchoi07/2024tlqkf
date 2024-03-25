@@ -8,25 +8,6 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 
-<body>
-  <!-- 헤더 시작 -->
-  <header>
-    <ul>
-      <li>
-        <a href="/"><img src="./logo.png" alt="로고" width="150px" /></a>
-      </li>
-      <li><a href="./sub01.html">information</a></li>
-      <li><a href="./sub02.html">statistics</a></li>
-      <li><a href="./sub03.html">reservation</a></li>
-      <li><a href="./sub04.html">goods</a></li>
-    </ul>
-    <ul>
-      <li><a href="#">로그인</a></li>
-      <li><a href="#">회원가입</a></li>
-    </ul>
-  </header>
-  <!-- 헤더 끝 -->
-
   <div class="container mt-5">
     <div id="controls" class="mb-3">
       <select id="leagueSelect" class="custom-select mr-2">
@@ -62,22 +43,6 @@
     <div id="goodsList"></div>
   </div>
 
-    <!-- 푸터 시작 -->
-    <footer>
-      <ul>
-        <li>
-          <img src="./logo.png" alt="" width="200px;" />
-        </li>
-        <li>
-          [Copyright]<br />
-          Copyrightⓒ Skills baseball park. All rights reserved.<br />
-          Call: 142-3677<br />
-          Email: help@skillsbaseballpark.com<br />
-          Address: (12345) 서울특별서 중구 중북로 71
-        </li>
-      </ul>
-    </footer>
-    <!-- 푸터 끝 -->
 
     <!-- 사진 편집 영역 -->
     <!-- Modal -->
@@ -93,10 +58,10 @@
             <div id="edit-area" class="edit-area"></div>
             <!-- 편집 도구 -->
             <div class="edit-tools">
-              <button id="reset-button" class="btn btn-secondary">원래대로</button>
+              <button id="reset-button" class="btn btn-secondary" onclick="resetModal();">원래대로</button>
               <button id="add-image-button" class="btn btn-primary">사진 추가</button>
               <input type="file" id="image-input" hidden />
-              <button id="delete-button" class="btn btn-danger">삭제</button>
+              <button id="delete-button" class="btn btn-danger" onclick="removeAllBackimg();">삭제</button>
               <button id="download-button" class="btn btn-success">다운로드</button>
               <button id="text-box-button" class="btn btn-info">글상자</button>
               <button id="move-rotate-text-box-button" class="btn btn-warning">글상자 이동/회전</button>
